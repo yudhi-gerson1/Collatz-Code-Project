@@ -22,6 +22,8 @@ Comparação: Agora é possivel comparar dois números (pela soma acumulativa e 
 6. 1
 Então, foi isso, aproveite o código!
 """
+import funcoes as f
+import colbuddy as cb
 
 print("--- Collatz Code v1.1 (Novo) ---")
 print("( Criado por Yudhi Gerson. Todos os direitos reservados. 100% Humano. )")
@@ -33,8 +35,14 @@ while True:
         print("Até mais, pequeno matemático!")
         break
     elif cmd == "[collatz]":
-        # função de collatz
-        pass
+        try:	
+        	entradaCollatz = int(input("Digite um número para entrada: "))
+        	if entradaCollatz <= 0:
+        		print("ERRO: O collatz apenas é para números naturais")
+        	else:
+        		f.collatz(entradaCollatz)
+        except ValueError:
+        	print("ERRO: Você inseriu um texto ou um decimal. O collatz só aceita naturais na matemática.")
     elif cmd == "[ajuda]":
         print("""
         --- Comandos de Collatz Code v1.1 ---
@@ -47,33 +55,72 @@ while True:
         [separador]: Modifica o separador temporariamente
         Enter: Continuar
         [comparar]: Compara dois números pela soma acumulativa e passos no Collatz
-        [comparar3]: Compara três números pela soma acumulativa e passos no Collatz
+        [comparar3]: Compara três números pela soma acumulativa e passos no Collatz (Obs: foi adiado para a versão 1.2)
         [passos]: Foca exclusivamente nos passos
         [numerar]: Enumera os passos do Collatz
         """)
     elif cmd == "[acumulo]":
-        # função de acúmulo
-        pass
+        try:	
+        	entradaAcumulo= int(input("Digite um número para acumulo: "))
+        	if entradaAcumulo <= 0:
+        		print("ERRO: O collatz apenas é para números naturais")
+        	else:
+        		f.acumular(entradaAcumulo)
+        except ValueError:
+        	print("ERRO: Você inseriu um texto ou um decimal. O collatz só aceita naturais na matemática.")
     elif cmd == "[colbuddy]":
-        # função de CollatzBuddy
+        cb.conversar()
         pass
     elif cmd == "[escolher]":
-        # função de escolher
+        try:
+        	n1_esc = int(input("Digite o número 1: "))
+        	n2_esc = int(input("Digite o número 2: "))
+        	if n1_esc <= 0 or n2_esc <= 0:
+        		print("ERRO: O collatz apenas é para números naturais")
+        	else:
+        		cb.escolher(n1_esc, n2_esc)
+        except ValueError:
+        	print("ERRO: Você inseriu um texto ou um decimal. O collatz só aceita naturais na matemática.")
         pass
     elif cmd == "[separador]":
-        # função do separador
-        pass
+        separador = input("Digite o Separador: ")
+        try:	
+        	entradaSeparar = int(input("Digite um número para separar no Collatz: "))
+        	if entradaSeparar <= 0:
+        		print("ERRO: O collatz apenas é para números naturais")
+        	else:
+        		f.separar(separador, entradaSeparar)
+        except ValueError:
+        	print("ERRO: Você inseriu um texto ou um decimal. O collatz só aceita naturais na matemática.")
     elif cmd == "[comparar]":
-        # função de comparar 2 números
-        pass
+        try:
+        	n1 = int(input("Digite o número 1: "))
+        	n2 = int(input("Digite o número 2: "))
+        	if n1 <= 0 or n2 <= 0:
+        		print("ERRO: O collatz apenas é para números naturais")
+        	else:
+        		f.comparar(n1, n2)
+        except ValueError:
+        	print("ERRO: Você inseriu um texto ou um decimal. O collatz só aceita naturais na matemática.")
     elif cmd == "[comparar3]":
-        # função de comparar 3 números
-        pass
+        print("ERRO: O Comando foi adiado para v1.2. Digite [ajuda] para outros comandos.")
     elif cmd == "[passos]":
-        # função de passos
-        pass
+        try:	
+        	entradaPassos = int(input("Digite um número para contar os passos: "))
+        	if entradaPassos <= 0:
+        		print("ERRO: O collatz apenas é para números naturais")
+        	else:
+        		f.passos(entradaPassos)
+        except ValueError:
+        	print("ERRO: Você inseriu um texto ou um decimal. O collatz só aceita naturais na matemática.")
     elif cmd == "[numerar]":
-        # função de numerar
-        pass
+        try:	
+        	entradaNumerar = int(input("Digite um número para numerar os passos: "))
+        	if entradaNumerar <= 0:
+        		print("ERRO: O collatz apenas é para números naturais")
+        	else:
+        		f.numerar(entradaNumerar)
+        except ValueError:
+        	print("ERRO: Você inseriu um texto ou um decimal. O collatz só aceita naturais na matemática.")
     else:
         print("ERRO: Comando não reconhecido. Digite [ajuda] para comandos disponíveis.")
