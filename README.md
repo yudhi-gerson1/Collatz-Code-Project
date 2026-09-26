@@ -13,7 +13,7 @@ Um programa interativo em linha de comando (CLI) desenvolvido em Python para exp
 2. Clone o repositório ou baixe o arquivo `.py`.
 3. Execute o script no terminal:
    ```bash
-   python collatz_code.py
+   python main.py
    ```
 
 ---
